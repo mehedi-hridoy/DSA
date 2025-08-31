@@ -1,5 +1,5 @@
 // two sum leetcode bruteforce solution
-
+// time complexity O(n*n)
 #include<bits/stdc++.h>
 using namespace std;
 
