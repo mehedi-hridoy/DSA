@@ -24,6 +24,31 @@ vector<vector<int>> threeSum(vector<int> & nums) {
     return ans;
 }
 
+
+vector<vector<int>>threeSumHash(vector<int> & nums) {
+    int n = nums.size();
+    vector<vector<int>> ans;
+    set<vector<int>> uniqueTriplates;
+    for(int i = 0; i < n; i ++) {
+        int tar = - nums[i];
+        set<int>s;
+        for(int j = 0; j < n; j++) {
+            int third = tar - nums[j];
+            if(s.find(third) != s.end()) {
+                vector<int>trip = {nums[i],nums[j],third};
+                sort(trip.begin(),trip.end());
+                uniqueTriplates.insert(trip);
+            }
+
+            s.insert(nums[j]);
+        }
+    }
+
+    return ans;
+}
+
+
+
 int main() {
     int n;
     cin >> n;
