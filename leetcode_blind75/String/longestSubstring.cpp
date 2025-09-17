@@ -20,6 +20,25 @@ int longestSubstring(string s) {
 }
 
 
+// two pointer approach (optimized)
+int longestSubstringOptimized(string s) {
+    
+    vector<int> last(256, -1);
+    int left = 0;   
+    int best = 0;   
+
+    for (int right = 0; right < (int)s.size(); ++right) {
+        unsigned char ch = s[right];
+        if (last[ch] >= left) {
+            left = last[ch] + 1;
+        }
+        last[ch] = right; 
+        best = max(best, right - left + 1);
+    }
+
+    return best;
+}
+
 int main() {
 
     string s;
