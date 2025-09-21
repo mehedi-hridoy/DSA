@@ -3,7 +3,7 @@
 using namespace std;
 
 bool isValid(string s) {
-    // Use a stack to match opening and closing brackets
+    
     stack<char> st;
     auto isOpen = [](char c){ return c=='(' || c=='[' || c=='{'; };
     auto matchOf = [](char c){
