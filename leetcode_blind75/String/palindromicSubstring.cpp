@@ -1,4 +1,4 @@
-// longest  palindromic substring leetcode 647
+// palindromic substring leetcode 647
 #include<bits/stdc++.h>
 using namespace std;
 
