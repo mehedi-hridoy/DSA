@@ -6,7 +6,7 @@ vector<int> minOperations(string boxes)
     int n = boxes.size();
     vector<int> ans(n, 0);
 
-    // Pass 1: Left to Right
+    
     int balls = 0, moves = 0;
     for (int i = 0; i < n; i++)
     {
@@ -16,7 +16,7 @@ vector<int> minOperations(string boxes)
         moves += balls;
     }
 
-    // Pass 2: Right to Left
+   
     balls = 0;
     moves = 0;
     for (int i = n - 1; i >= 0; i--)
@@ -46,5 +46,5 @@ int main()
     for(int i = 0 ; i < n; i ++) {
         cout << ans[i];
     }
-    
+
 }
