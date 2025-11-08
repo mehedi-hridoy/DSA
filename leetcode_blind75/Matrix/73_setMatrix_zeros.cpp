@@ -13,28 +13,28 @@ int main() {
         }
     }
 
-    vector<int> rows(n, 0), cols(m, 0);
+    vector<int> row(n, 0), col(m, 0);
 
-    // Step 1: mark rows and columns to be zeroed
+    // Step 1: Mark rows and columns that need to be zeroed
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
             if (v[i][j] == 0) {
-                rows[i] = 1;
-                cols[j] = 1;
+                row[i] = 1;
+                col[j] = 1;
             }
         }
     }
 
-    // Step 2: set zeros
+    // Step 2: Set elements to zero based on markings
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
-            if (rows[i] == 1 || cols[j] == 1) {
+            if (row[i] == 1 || col[j] == 1) {
                 v[i][j] = 0;
             }
         }
     }
 
-    // Output
+    // Output the modified matrix
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
             cout << v[i][j] << " ";
